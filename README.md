@@ -8,17 +8,17 @@
 
 создаем метод для разделения строки из консоли в массив по знаку “,”
 
-string[] GetArrayStringConsole (string inConsolSimvol)
+string[] GetArrayStringConsole (string inSimvol)
 {
-    string[] arraySimvol = new string[inConsolSimvol.Length];
-    arraySimvol = inConsolSimvol.Split(",");
+    string[] arraySimvol = new string[inSimvol.Length];
+    arraySimvol = inSimvol.Split(",");
     return arraySimvol;
 }
-* Создание метода string[] GetArrayThreeSimvol
+* Создание метода string[] GetArray3Simvol
 
 создаем метод сортирующий символы из массива. сначала отсчитываем количество, удовлетворяющих требований, для определения длинны нового массива. создаем массив по выясненому количествуи заносим туда символы удовлетворяющие требованиям.
 
-string[] GetArrayThreeSimvol (string[] array)
+string[] GetArray3Simvol (string[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -29,17 +29,17 @@ string[] GetArrayThreeSimvol (string[] array)
             count++;
         }
     }
-    string[] arrayThreeSimvol = new string[count];
+    string[] array3Simvol = new string[count];
     for (int i = 0, j = 0; i < array.Length; i++)
     {
         string simvol = array[i];
         if (simvol.Length <= 3)
         {
-            arrayThreeSimvol[j] = simvol;
+            array3Simvol[j] = simvol;
             j++;
         }
     }
-    return arrayThreeSimvol;
+    return array3Simvol;
 }
 * Создание метода void Print
 
@@ -58,7 +58,7 @@ void Print (string[] array)
 
 присваиваем введенное в консоле от пользователя символы string inStringSimvol = console.ReadLine()
 присваиваем массиву преобразованную строку через метод string[] arraySimvol = GetArrayStringConsole(inStringSimvol)
-Console.WriteLine(); Console.Write("Введенные символы - "); Print(GetArrayStringConsole(inStringSimvol)); Console.WriteLine(); Console.Write("Введенные символы длинной меньше либо равны 3 - "); Print(GetArrayThreeSimvol(arraySimvol)); Console.WriteLine();
+Console.WriteLine(); Console.Write("Введенные символы - "); Print(GetArrayStringConsole(inStringSimvol)); Console.WriteLine(); Console.Write("Введенные символы длинной меньше либо равны 3 - "); Print(GetArray3Simvol(arraySimvol)); Console.WriteLine();
 
 Console.Write("Введите набор символов через знак (,) - ");
 string inStringSimvol = Console.ReadLine();
@@ -68,7 +68,7 @@ Console.Write("Введенные символы - ");
 Print(GetArrayStringConsole(inStringSimvol));
 Console.WriteLine();
 Console.Write("Введенные символы длинной меньше либо равны 3 - ");
-Print(GetArrayThreeSimvol(arraySimvol));
+Print(GetArray3Simvol(arraySimvol));
 Console.WriteLine();
 
 
